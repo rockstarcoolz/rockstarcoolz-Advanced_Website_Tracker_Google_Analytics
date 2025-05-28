@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Home - Advanced Website</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome, User!</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="#" id="logout-link">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Your Dashboard</h2>
+            <p>
+                Here you can find useful information, resources, and updates tailored for you as a registered user.
+            </p>
+            <ul>
+                <li>Exclusive articles and guides</li>
+                <li>Community updates</li>
+                <li>Personalized notifications</li>
+            </ul>
+            <button onclick="alert('Thanks for engaging!')">Engage with Content</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Advanced Website. All rights reserved.</p>
+    </footer>
+    <script>
+    // Logout logic
+    document.getElementById('logout-link').onclick = function() {
+        localStorage.removeItem('isAdmin');
+        alert('Logged out.');
+        window.location.href = 'index.html';
+    };
+    // Optional: Redirect admin to dashboard if they try to access this page
+    if (localStorage.getItem('isAdmin') === 'true') {
+        window.location.href = 'dashboard.html';
+    }
+    </script>
+</body>
+</html>

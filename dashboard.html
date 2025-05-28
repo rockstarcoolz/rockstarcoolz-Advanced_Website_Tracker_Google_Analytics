@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Advanced Website</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="#" id="logout-link">Logout</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Registered Users</h2>
+            <table id="users-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Users will be loaded here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Advanced Website. All rights reserved.</p>
+    </footer>
+    <script>
+    // Only allow admin
+    if (localStorage.getItem('isAdmin') !== 'true') {
+        alert('Access denied. Admins only.');
+        window.location.href = 'login.html';
+    }
+    // Load users
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    const tbody = document.querySelector('#users-table tbody');
+    users.forEach(user => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${user.name}</td><td>${user.email}</td><td>${user.phone || ''}</td>`;
+        tbody.appendChild(tr);
+    });
+    // Logout
+    document.getElementById('logout-link').onclick = function() {
+        localStorage.removeItem('isAdmin');
+        alert('Logged out.');
+        window.location.href = 'index.html';
+    };
+    </script>
+</body>
+</html>

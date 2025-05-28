@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Advanced Website</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html" id="dashboard-link" style="display:none;">Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Our Mission</h2>
+            <p>
+                We aim to provide a secure and engaging platform for users and admins alike. 
+                Our site is built with modern web standards and is fully responsive.
+            </p>
+        </section>
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li>Responsive design</li>
+                <li>Admin dashboard</li>
+                <li>Secure registration and login (demo)</li>
+                <li>Google Analytics integration</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Advanced Website. All rights reserved.</p>
+    </footer>
+    <script>
+    if (localStorage.getItem('isAdmin') === 'true') {
+        document.getElementById('dashboard-link').style.display = 'inline-block';
+    }
+    </script>
+</body>
+</html>

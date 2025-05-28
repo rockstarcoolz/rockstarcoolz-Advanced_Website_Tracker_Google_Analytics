@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Website - Home</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'YOUR_TRACKING_ID');
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Advanced Website</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html" id="dashboard-link" style="display:none;">Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Discover, Connect, and Engage</h2>
+            <p>
+                This platform allows users to register, log in, and interact with engaging content. 
+                Admins can view all registered users in a secure dashboard.
+            </p>
+            <button onclick="alert('Thank you for engaging!')">Engage Now</button>
+        </section>
+        <section class="info">
+            <h3>Why Join Us?</h3>
+            <ul>
+                <li>Access exclusive content and resources</li>
+                <li>Connect with a vibrant community</li>
+                <li>Stay updated with the latest news</li>
+            </ul>
+        </section>
+        <section class="cta">
+            <h3>Ready to get started?</h3>
+            <a href="register.html" class="btn">Register Now</a>
+            <a href="login.html" class="btn secondary">Login</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Advanced Website. All rights reserved.</p>
+    </footer>
+    <script>
+    // Show dashboard link if admin is logged in
+    if (localStorage.getItem('isAdmin') === 'true') {
+        document.getElementById('dashboard-link').style.display = 'inline-block';
+    }
+    </script>
+</body>
+</html>

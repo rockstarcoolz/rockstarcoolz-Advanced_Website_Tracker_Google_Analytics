@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Advanced Website</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="dashboard.html" id="dashboard-link" style="display:none;">Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Get in Touch</h2>
+            <form>
+                <label for="contact-name">Name:</label>
+                <input type="text" id="contact-name" required>
+                <label for="contact-email">Email:</label>
+                <input type="email" id="contact-email" required>
+                <label for="contact-message">Message:</label>
+                <textarea id="contact-message" rows="4" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Advanced Website. All rights reserved.</p>
+    </footer>
+    <script>
+    if (localStorage.getItem('isAdmin') === 'true') {
+        document.getElementById('dashboard-link').style.display = 'inline-block';
+    }
+    </script>
+</body>
+</html>
